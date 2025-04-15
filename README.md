@@ -2,9 +2,10 @@
 
 ## Demo
 ### Agent Mode
-1. can you setup a python virtual environment for me?
+1. can you setup and activate a python virtual environment for me?
 1. can you run the python app in my workspace for me?
   1. self-healing, installing things for me
+1. add delete button
 1. add unit tests + run them
 ### Model Context Protocol (MCP)
 > issues, PRs, project management, ask about actions workflows, ask about security scan results, etc.
