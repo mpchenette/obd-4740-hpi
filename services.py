@@ -39,12 +39,3 @@ class TaskService:
         
         db.session.commit()
         return task
-    
-    def delete_task(self, task_id):
-        task = self.get_task_by_id(task_id)
-        if not task:
-            return False
-        
-        db.session.delete(task)
-        db.session.commit()
-        return True

@@ -169,7 +169,6 @@
                         <option value="in-progress" ${task.status === 'in-progress' ? 'selected' : ''}>In Progress</option>
                         <option value="completed" ${task.status === 'completed' ? 'selected' : ''}>Completed</option>
                     </select>
-                    <button class="btn-edit btn-delete" onclick="deleteTask(${task.id})">Delete</button>
                 </div>
             `;
             
@@ -246,29 +245,6 @@
                 console.error('Error updating task status:', error);
                 alert('Failed to update task status. Please try again.');
             });
-        }
-        
-        // Function to delete a task
-        function deleteTask(taskId) {
-            if (confirm('Are you sure you want to delete this task?')) {
-                fetch(`/tasks/${taskId}`, {
-                    method: 'DELETE',
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Failed to delete task');
-                    }
-                    return response.json();
-                })
-                .then(result => {
-                    // Reload tasks to reflect the deletion
-                    loadTasks();
-                })
-                .catch(error => {
-                    console.error('Error deleting task:', error);
-                    alert('Failed to delete task. Please try again.');
-                });
-            }
         }
     </script>
 </body>
